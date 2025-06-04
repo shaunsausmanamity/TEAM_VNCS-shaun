@@ -165,4 +165,153 @@
         </div>
     </section>
 
+<!-- Size Guide Section -->
+    <section class="size-guide" id="size-guide">
+        <div class="container">
+            <h2>Men's Size Guide</h2>
+            <div class="size-content">
+                <div class="size-text">
+                    <h3>Find Your Perfect Fit</h3>
+                    <p>Our men's clothing is tailored for the modern gentleman, offering both comfort and style. Each piece is designed with attention to detail and quality craftsmanship.</p>
+                    <div class="size-tips">
+                        <div class="tip">
+                            <span class="tip-icon">📏</span>
+                            <div>
+                                <strong>Measure Accurately</strong>
+                                <p>Check chest, waist, and neck for the best fit</p>
+                            </div>
+                        </div>
+                        <div class="tip">
+                            <span class="tip-icon">👔</span>
+                            <div>
+                                <strong>Professional Fit</strong>
+                                <p>Tailored for both office and casual wear</p>
+                            </div>
+                        </div>
+                        <div class="tip">
+                            <span class="tip-icon">🔄</span>
+                            <div>
+                                <strong>Easy Exchanges</strong>
+                                <p>Free size exchanges within 30 days</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="size-chart">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Size</th>
+                                <th>Chest (cm)</th>
+                                <th>Waist (cm)</th>
+                                <th>Neck (cm)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>S</td><td>88-92</td><td>76-80</td><td>37-38</td></tr>
+                            <tr><td>M</td><td>96-100</td><td>84-88</td><td>39-40</td></tr>
+                            <tr><td>L</td><td>104-108</td><td>92-96</td><td>41-42</td></tr>
+                            <tr><td>XL</td><td>112-116</td><td>100-104</td><td>43-44</td></tr>
+                            <tr><td>XXL</td><td>120-124</td><td>108-112</td><td>45-46</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- About Men's Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>SOUTHSIDE Men</h2>
+                    <p>We craft clothing for the modern gentleman who values both style and substance. Our men's collection combines timeless elegance with contemporary design, using premium materials and expert tailoring to create pieces that transition seamlessly from boardroom to social hour.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <span class="number">10K+</span>
+                            <span class="label">Satisfied Men</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">500+</span>
+                            <span class="label">Men's Styles</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">100%</span>
+                            <span class="label">Premium Quality</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop" alt="SOUTHSIDE Men's Fashion">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="logo-icon">S</span>
+                        <span class="logo-text">SOUTHSIDE</span>
+                    </div>
+                    <p>Premium fashion for the whole family.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Men's Help</h4>
+                    <ul>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Care Instructions</a></li>
+                        <li><a href="#">Tailoring Services</a></li>
+                        <li><a href="#">Style Consultation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Craftsmanship</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">Customer Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SOUTHSIDE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cart-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Shopping Cart</h3>
+                <button class="close-btn" onclick="closeCart()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="cart-items"></div>
+                <div class="cart-total">
+                    <strong>Total: ₹<span id="cart-total">0</span></strong>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-primary" onclick="checkout()">Checkout</button>
+            </div>
+        </div>
+    </div>
+    <script src="mens.js"></script>
+    
+</body>
+</html>
