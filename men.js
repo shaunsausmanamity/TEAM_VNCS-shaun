@@ -197,4 +197,215 @@ function updateCategoryButtons(activeCategory) {
     console.log(`Active category: ${activeCategory}`);
 }
 
+// Checkout function
+function checkout() {
+    if (cart.length === 0) {
+        alert('Your cart is empty! Please add some items before checkout.');
+        return;
+    }
+    
+    // Create checkout summary
+    let summary = 'Men\'s Fashion Order Summary:\n\n';
+    cart.forEach(item => {
+        summary += `${item.name} × ${item.quantity} = ₹${(item.price * item.quantity).toLocaleString()}\n`;
+    });
+    summary += `\nTotal: ₹${cartTotal.toLocaleString()}`;
+    summary += '\n\nThank you for shopping SOUTHSIDE Men\'s! 👔';
+    
+    alert(summary);
+    
+    // Clear cart after checkout
+    cart = [];
+    cartCount = 0;
+    cartTotal = 0;
+    updateCartDisplay();
+    closeCart();
+}
 
+// Close modal when clicking outside
+window.onclick = function(event) {
+    const modal = document.getElementById('cart-modal');
+    if (event.target === modal) {
+        closeCart();
+    }
+}
+
+// Keyboard navigation for modals
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeCart();
+    }
+});
+
+// Add CSS for animations
+const style = document.createElement('style');
+style.textContent = `
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    
+    .product-card {
+        animation: none;
+    }
+    
+    .cart-item {
+        animation: slideIn 0.3s ease forwards;
+    }
+    
+    @keyframes slideIn {
+        from {
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+`;
+document.head.appendChild(style);
+
+// Sophisticated hover effects for men's fashion
+function addHoverEffect(element) {
+    const effect = document.createElement('div');
+    effect.innerHTML = '⚡';
+    effect.style.cssText = `
+        position: absolute;
+        pointer-events: none;
+        font-size: 1.2rem;
+        animation: hoverEffect 0.8s ease forwards;
+        z-index: 1000;
+        color: #2d3436;
+    `;
+    
+    const rect = element.getBoundingClientRect();
+    effect.style.left = (rect.left + Math.random() * rect.width) + 'px';
+    effect.style.top = (rect.top + Math.random() * rect.height) + 'px';
+    
+    document.body.appendChild(effect);
+    
+    setTimeout(() => {
+        document.body.removeChild(effect);
+    }, 800);
+}
+
+// Add hover effect animation CSS
+const hoverStyle = document.createElement('style');
+hoverStyle.textContent = `
+    @keyframes hoverEffect {
+        0% {
+            opacity: 1;
+            transform: scale(0) rotate(0deg);
+        }
+        50% {
+            opacity: 1;
+            transform: scale(1) rotate(180deg);
+        }
+        100% {
+            opacity: 0;
+            transform: scale(0) rotate(360deg);
+        }
+    }
+`;
+document.head.appendChild(hoverStyle);
+
+// Add hover effects to product cards on hover
+document.addEventListener('DOMContentLoaded', function() {
+    const productCards = document.querySelectorAll('.product-card');
+    productCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            addHoverEffect(card);
+        });
+    });
+});
+
+// Search functionality
+function searchProducts(query) {
+    const products = document.querySelectorAll('.product-card');
+    const searchTerm = query.toLowerCase();
+    
+    products.forEach(product => {
+        const productName = product.querySelector('h3').textContent.toLowerCase();
+        if (productName.includes(searchTerm)) {
+            product.style.display = 'block';
+        } else {
+            product.style.display = 'none';
+        }
+    });
+}
+
+// Size guide functionality
+function showSizeGuide() {
+    document.getElementById('size-guide').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+    });
+}
+
+// Newsletter signup
+function subscribeNewsletter(email) {
+    if (email && email.includes('@')) {
+        alert(`Thank you for subscribing to SOUTHSIDE Men's newsletter! 👔\nWe'll send men's fashion updates to ${email}`);
+        return true;
+    } else {
+        alert('Please enter a valid email address.');
+        return false;
+    }
+}
+
+// Social sharing functions
+function shareOnSocial(platform, productName) {
+    const url = window.location.href;
+    const text = `Check out this stylish ${productName} from SOUTHSIDE Men's!`;
+    
+    let shareUrl = '';
+    switch(platform) {
+        case 'facebook':
+            shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+            break;
+        case 'twitter':
+            shareUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+            break;
+        case 'whatsapp':
+            shareUrl = `https://wa.me/?text=${encodeURIComponent(text + ' ' + url)}`;
+            break;
+    }
+    
+    if (shareUrl) {
+        window.open(shareUrl, '_blank', 'width=600,height=400');
+    }
+}
+
+// Error handling
+window.addEventListener('error', function(event) {
+    console.error('An error occurred:', event.error);
+});
+
+// Performance optimization - Lazy loading for images
+function lazyLoadImages() {
+    const images = document.querySelectorAll('img[data-src]');
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.classList.remove('lazy');
+                observer.unobserve(img);
+            }
+        });
+    });
+    
+    images.forEach(img => imageObserver.observe(img));
+}
+
+// Initialize lazy loading if supported
+if ('IntersectionObserver' in window) {
+    document.addEventListener('DOMContentLoaded', lazyLoadImages);
+}
