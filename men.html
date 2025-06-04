@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOUTHSIDE MEN - Premium Fashion for Men</title>
+    <meta name="description" content="Discover SOUTHSIDE's premium men's fashion collection with sophisticated designs and quality craftsmanship.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="mens.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">S</span>
+                <span class="logo-text">SOUTHSIDE</span>
+            </div>
+            <nav class="nav">
+                <a href="index.html">HOME</a>
+                <a href="#" onclick="showCategory('formal')">FORMAL</a>
+                <a href="#" onclick="showCategory('casual')">CASUAL</a>
+                <a href="#" onclick="showCategory('sports')">SPORTS</a>
+                <a href="#featured">SALE</a>
+                <a href="#about">ABOUT</a>
+            </nav>
+            <div class="actions">
+                <button class="cart-btn" onclick="showCart()">
+                    Cart (<span id="cart-count">0</span>)
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Men's Collection 2025</h1>
+            <p>Sophisticated designs meet premium comfort for the modern gentleman</p>
+            <a href="#featured" class="btn-primary">Shop Men's Now</a>
+        </div>
+    </section>
+
+    <!-- Style Categories -->
+    <section class="categories" id="categories">
+        <div class="container">
+            <h2>Shop by Style</h2>
+            <div class="category-grid">
+                <div class="category-card" onclick="showCategory('formal')">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop" alt="Formal Wear">
+                    <div class="category-content">
+                        <h3>Formal</h3>
+                        <p>Suits & Business Attire</p>
+                    </div>
+                </div>
+                <div class="category-card" onclick="showCategory('casual')">
+                    <img src="https://images.unsplash.com/photo-1516826957135-700dedea698c?w=400&h=500&fit=crop" alt="Casual Wear">
+                    <div class="category-content">
+                        <h3>Casual</h3>
+                        <p>Everyday Comfort & Style</p>
+                    </div>
+                </div>
+                <div class="category-card" onclick="showCategory('sports')">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=500&fit=crop" alt="Sports Wear">
+                    <div class="category-content">
+                        <h3>Sports</h3>
+                        <p>Active & Athletic Wear</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
