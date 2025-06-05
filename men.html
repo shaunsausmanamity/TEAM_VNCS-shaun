@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOUTHSIDE MEN</title>
+    <meta name="description" content="Discover SOUTHSIDE's premium men's fashion collection with sophisticated designs and quality craftsmanship.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="mens.css">
+</head>
+
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">S</span>
+                <span class="logo-text">SOUTHSIDE</span>
+            </div>
+            <nav class="nav">
+                <a href="index.html">HOME</a>
+                <a href="#" onclick="showCategory('formal')">FORMAL</a>
+                <a href="#" onclick="showCategory('casual')">CASUAL</a>
+                <a href="#" onclick="showCategory('sports')">SPORTS</a>
+                <a href="#featured">SALE</a>
+                <a href="#about">ABOUT</a>
+            </nav>
+            <div class="actions">
+                <button class="cart-btn" onclick="showCart()">
+                    Cart (<span id="cart-count">0</span>)
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Men's Collection 2025</h1>
+            <p>Sophisticated designs meet premium comfort for the modern gentleman</p>
+            <a href="#featured" class="btn-primary">Shop Men's Now</a>
+        </div>
+    </section>
+
+    <!-- Style Categories -->
+    <section class="categories" id="categories">
+        <div class="container">
+            <h2>Shop by Style</h2>
+            <div class="category-grid">
+                <div class="category-card" onclick="showCategory('formal')">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop" alt="Formal Wear">
+                    <div class="category-content">
+                        <h3>Formal</h3>
+                        <p>Suits & Business Attire</p>
+                    </div>
+                </div>
+                <div class="category-card" onclick="showCategory('casual')">
+                    <img src="https://images.unsplash.com/photo-1516826957135-700dedea698c?w=400&h=500&fit=crop" alt="Casual Wear">
+                    <div class="category-content">
+                        <h3>Casual</h3>
+                        <p>Everyday Comfort & Style</p>
+                    </div>
+                </div>
+                <div class="category-card" onclick="showCategory('sports')">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=500&fit=crop" alt="Sports Wear">
+                    <div class="category-content">
+                        <h3>Sports</h3>
+                        <p>Active & Athletic Wear</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Featured Products -->
+    <section class="featured" id="featured">
+        <div class="container">
+            <h2>Featured Men's Collection</h2>
+            <div class="product-grid" id="product-grid">
+                <div class="product-card" data-category="formal">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=300&h=400&fit=crop" alt="Navy Suit">
+                        <div class="product-badge">New</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Premium Navy Suit</h3>
+                        <div class="rating">★★★★★ (45)</div>
+                        <div class="price">₹24,990</div>
+                        <div class="sizes">Sizes: S, M, L, XL, XXL</div>
+                        <button class="btn-secondary" onclick="addToCart('navy-suit', 24990, 'Premium Navy Suit')">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="casual">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=300&h=400&fit=crop" alt="Casual Shirt">
+                    </div>
+                    <div class="product-info">
+                        <h3>Oxford Cotton Shirt</h3>
+                        <div class="rating">★★★★☆ (38)</div>
+                        <div class="price">₹2,890</div>
+                        <div class="sizes">Sizes: S, M, L, XL, XXL</div>
+                        <button class="btn-secondary" onclick="addToCart('oxford-shirt', 2890, 'Oxford Cotton Shirt')">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="formal">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1583743089695-4b816a340f82?w=300&h=400&fit=crop" alt="Dress Shirt">
+                        <div class="product-badge sale">-25%</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Classic Dress Shirt</h3>
+                        <div class="rating">★★★★★ (52)</div>
+                        <div class="price">
+                            <span class="current">₹2,990</span>
+                            <span class="original">₹3,990</span>
+                        </div>
+                        <div class="sizes">Sizes: S, M, L, XL, XXL</div>
+                        <button class="btn-secondary" onclick="addToCart('dress-shirt', 2990, 'Classic Dress Shirt')">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="casual">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=300&h=400&fit=crop" alt="Chino Pants">
+                        <div class="product-badge">Popular</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Slim Fit Chinos</h3>
+                        <div class="rating">★★★★☆ (29)</div>
+                        <div class="price">₹3,590</div>
+                        <div class="sizes">Sizes: 30, 32, 34, 36, 38</div>
+                        <button class="btn-secondary" onclick="addToCart('chino-pants', 3590, 'Slim Fit Chinos')">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="sports">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=400&fit=crop" alt="Sports Jacket">
+                        <div class="product-badge">New</div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Performance Track Jacket</h3>
+                        <div class="rating">★★★★★ (33)</div>
+                        <div class="price">₹4,290</div>
+                        <div class="sizes">Sizes: S, M, L, XL, XXL</div>
+                        <button class="btn-secondary" onclick="addToCart('track-jacket', 4290, 'Performance Track Jacket')">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <div class="product-card" data-category="casual">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=300&h=400&fit=crop" alt="Polo Shirt">
+                    </div>
+                    <div class="product-info">
+                        <h3>Classic Polo Shirt</h3>
+                        <div class="rating">★★★★★ (41)</div>
+                        <div class="price">₹1,990</div>
+                        <div class="sizes">Sizes: S, M, L, XL, XXL</div>
+                        <button class="btn-secondary" onclick="addToCart('polo-shirt', 1990, 'Classic Polo Shirt')">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- Size Guide Section -->
+    <section class="size-guide" id="size-guide">
+        <div class="container">
+            <h2>Men's Size Guide</h2>
+            <div class="size-content">
+                <div class="size-text">
+                    <h3>Find Your Perfect Fit</h3>
+                    <p>Our men's clothing is tailored for the modern gentleman, offering both comfort and style. Each piece is designed with attention to detail and quality craftsmanship. we have premium clothing for all age groups.</p>
+                    <div class="size-tips">
+                        <div class="tip">
+                            <span class="tip-icon">📏</span>
+                            <div>
+                                <strong>Measure Accurately</strong>
+                                <p>Check chest, waist, and neck for the best fit</p>
+                            </div>
+                        </div>
+                        <div class="tip">
+                            <span class="tip-icon">👔</span>
+                            <div>
+                                <strong>Professional Fit</strong>
+                                <p>Tailored for both office and casual wear</p>
+                            </div>
+                        </div>
+                        <div class="tip">
+                            <span class="tip-icon">🔄</span>
+                            <div>
+                                <strong>Easy Exchanges</strong>
+                                <p>Free size exchanges within 30 days</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="size-chart">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Size</th>
+                                <th>Chest (cm)</th>
+                                <th>Waist (cm)</th>
+                                <th>Neck (cm)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>S</td><td>88-92</td><td>76-80</td><td>37-38</td></tr>
+                            <tr><td>M</td><td>96-100</td><td>84-88</td><td>39-40</td></tr>
+                            <tr><td>L</td><td>104-108</td><td>92-96</td><td>41-42</td></tr>
+                            <tr><td>XL</td><td>112-116</td><td>100-104</td><td>43-44</td></tr>
+                            <tr><td>XXL</td><td>120-124</td><td>108-112</td><td>45-46</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Men's Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>SOUTHSIDE Men</h2>
+                    <p>We craft clothing for the modern gentleman who values both style and substance. Our men's collection combines timeless elegance with contemporary design, using premium materials and expert tailoring to create pieces that transition seamlessly from boardroom to social hour.</p>
+                    <div class="stats">
+                        <div class="stat">
+                            <span class="number">10K+</span>
+                            <span class="label">Satisfied Men</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">500+</span>
+                            <span class="label">Men's Styles</span>
+                        </div>
+                        <div class="stat">
+                            <span class="number">100%</span>
+                            <span class="label">Premium Quality</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop" alt="SOUTHSIDE Men's Fashion">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="logo-icon">S</span>
+                        <span class="logo-text">SOUTHSIDE</span>
+                    </div>
+                    <p>Premium fashion for the whole family.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Men's Help</h4>
+                    <ul>
+                        <li><a href="#">Size Guide</a></li>
+                        <li><a href="#">Care Instructions</a></li>
+                        <li><a href="#">Tailoring Services</a></li>
+                        <li><a href="#">Style Consultation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Craftsmanship</a></li>
+                        <li><a href="#">Sustainability</a></li>
+                        <li><a href="#">Customer Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SOUTHSIDE. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="modal" id="cart-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Shopping Cart</h3>
+                <button class="close-btn" onclick="closeCart()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div id="cart-items"></div>
+                <div class="cart-total">
+                    <strong>Total: ₹<span id="cart-total">0</span></strong>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-primary" onclick="checkout()">Checkout</button>
+            </div>
+        </div>
+    </div>
+    <script src="mens.js"></script>
+    
+</body>
+</html>
